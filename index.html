@@ -1,0 +1,98 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>La Octava Vecindad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./src/script/main.java"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+</head>
+
+<body class="relative min-h-screen bg-cover bg-center"
+    style>
+    <header class="flex justify-between items-center px-6 py-4 bg-white bg-opacity-90">
+        <h1 class="font-bold text-lg">La Octava Vecindad</h1>
+        <nav class="flex items-center space-x-8 font-semibold text-lg">
+            <a href="#" class="hover:underline">Registrarse</a>
+            <a href="#" class="hover:underline">Iniciar sesión</a>
+            <i class="far fa-user text-2xl cursor-pointer"></i>
+        </nav>
+    </header>
+
+    <main id="bg" class="mx-auto px-10 py-10 text-center text-black bg-white bg-opacity-20 rounded-md mt-8" style="background-image: url(./src/assets/BG.jpeg) ;">
+        <div class="info-box">
+
+            <h2 class="font-bold text-xl mb-2">ADMINISTRACION</h2>
+            <p class="mb-2 text-base font-semibold">
+                <span class="inline-block" role="img" aria-label="house with garden emoji">🏡</span> ¡Con tu aporte seguimos
+                construyendo comunidad!
+            </p>
+            <p class="mb-10 font-semibold text-base max-w-3xl mx-auto">
+                En este condominio creemos que el verdadero progreso se construye entre todos. Cada cuota que aportas no es
+                solo un número: es una inversión en el bienestar, la seguridad y el desarrollo de todos los que vivimos
+                aquí.
+            </p>
+    
+            <form id="formulario"
+                class="grid grid-cols-1 sm:grid-cols-2 gap-x-20 gap-y-8 max-w-4xl mx-auto text-left font-semibold text-sm"
+                onsubmit="calcular(event)">
+                <div>
+                    <label for="nombre-propietario" class="block mb-1">Nombre del dueño</label>
+                    <input id="nombre-propietario" name="nombre-propietario" type="text"
+                    class="w-full rounded-md bg-gray-400 bg-opacity-50 border border-gray-600 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-black"
+                    required />
+                </div>
+                <div>
+                    <label for="nombre-inquilino" class="block mb-1">Nombre del Inquilino</label>
+                    <input id="nombre-inquilino" name="nombre-inquilino" type="text"
+                        class="w-full rounded-md bg-gray-400 bg-opacity-50 border border-gray-600 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-black" />
+                </div>
+                <div>
+                    <label for="numero-apartamento" class="block mb-1">Numero del apartamento</label>
+                    <input id="numero-apartamento" name="numero-apartamento" type="text"
+                        class="w-full rounded-md bg-gray-400 bg-opacity-50 border border-gray-600 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-black"
+                        required />
+                </div>
+                <div>
+                    <label for="cantidad-ninos" class="block mb-1">Cantidad de niños</label>
+                    <input id="cantidad-ninos" name="cantidad-ninos" type="number" min="0" value="0"
+                        class="w-full rounded-md bg-gray-400 bg-opacity-50 border border-gray-600 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-black"
+                        required />
+                </div>
+                <div>
+                    <label for="cantidad-adultos" class="block mb-1">Cantidad de adultos</label>
+                    <input id="cantidad-adultos" name="cantidad-adultos" type="number" min="0" value="0"
+                        class="w-full rounded-md bg-gray-400 bg-opacity-50 border border-gray-600 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-black"
+                        required />
+                </div>
+    
+                <div class="sm:col-span-2 text-center mt-6">
+                    <button type="submit"
+                        class="font-bold text-xl cursor-pointer select-none bg-black text-white px-8 py-2 rounded hover:bg-gray-800 transition">ENVIAR</button>
+                </div>
+            </form>
+    
+            <section id="resultado"
+                class="mt-10 max-w-4xl mx-auto text-left font-semibold text-base hidden bg-white bg-opacity-80 p-6 rounded-md shadow-md">
+                <h3 class="font-bold text-2xl mb-4">Resultados</h3>
+                <p id="detalle-piscina"></p>
+                <p id="detalle-juegos"></p>
+                <p id="detalle-zonas"></p>
+                <p id="detalle-aseo"></p>
+                <p id="subtotal"></p>
+                <p id="detalle-descuento"></p>
+                <p class="font-bold text-lg mt-4" id="total-pagar"></p>
+            </section>
+        </div>
+    </main>
+    <footer
+        class="absolute bottom-4 left-6 flex items-center space-x-2 text-black font-semibold text-sm bg-white bg-opacity-70 rounded-full px-3 py-1">
+        <i class="fab fa-instagram text-xl text-blue-900"></i>
+        <span>@Octava_vecindad</span>
+    </footer>
+</body>
+
+</html>
